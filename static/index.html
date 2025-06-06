@@ -27,6 +27,23 @@
             <h2>Command Output:</h2>
             <pre id="commandOutput">{{.CommandOutput}}</pre>
         </div>
+
+        <div class="upload-section">
+            <h2>Upload File to S3</h2>
+            <p>Upload a file to an S3 bucket. If the file contains malware, it will trigger GuardDuty findings.</p>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="bucketInput">S3 Bucket Name:</label>
+                    <input type="text" id="bucketInput" name="bucket" placeholder="my-bucket-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="fileInput">Select File:</label>
+                    <input type="file" id="fileInput" name="file" required>
+                </div>
+                <button type="submit">Upload to S3</button>
+            </form>
+            <div id="uploadResult" class="upload-result"></div>
+        </div>
     </div>
 
     <script src="/static/script.js"></script>
